@@ -11,7 +11,7 @@ mlflow.sklearn.autolog()
 mlflow.set_tracking_uri("http://127.0.0.1:5000")
 
 # load data
-df = pd.read_csv("namadataset_preprocessing/data_clean.csv")
+df = pd.read_csv("preprocessing/data_clean.csv")
 
 # split data
 X = df.drop("Survived", axis=1)
