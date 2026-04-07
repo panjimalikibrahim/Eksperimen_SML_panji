@@ -7,8 +7,7 @@ import mlflow
 import mlflow.sklearn
 mlflow.sklearn.autolog()
 
-# set MLflow ke UI
-mlflow.set_tracking_uri("http://127.0.0.1:5000")
+# mlflow.set_tracking_uri("http://127.0.0.1:5000")
 
 # load data
 df = pd.read_csv("preprocessing/data_clean.csv")
@@ -31,7 +30,7 @@ with mlflow.start_run():
     # log metric
     mlflow.log_metric("accuracy", acc)
 
-    # log model (artifact)
+    # log model
     mlflow.sklearn.log_model(model, "model")
 
     print("Accuracy:", acc)
