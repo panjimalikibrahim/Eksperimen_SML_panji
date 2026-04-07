@@ -18,7 +18,9 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install pandas scikit-learn mlflow
+        run: |
+          pip install --upgrade pip
+          pip install pandas scikit-learn mlflow
 
       - name: Run MLflow Project
-        run: mlflow run Membangun_model --env-manager=local
+        run: mlflow run . --env-manager=local
